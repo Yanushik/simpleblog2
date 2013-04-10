@@ -1,0 +1,16 @@
+<h1>Listing Users</h1>
+
+<table style="text-align:center">
+  <tr>
+    <th>Username</th>
+    <th>Link to blog</th> 
+  </tr>
+
+<% @users.each do |user| %>
+
+  <tr>
+    <td><%= user.username %></td>
+    <td> <%= link_to "view", user_path(user.username)%></td>
+  </tr>
+<% end %>
+</table>

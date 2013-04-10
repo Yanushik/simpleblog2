@@ -1,0 +1,49 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//General container just to keep the margins centered
+
+#container{
+	padding: 10px 7px 7px 7px;
+	margin: 0 auto;
+	width: 900px;
+	background-color:#FFFFFF;
+	
+	border: 0px solid #FFFFFF;
+	border-radius:10px;
+	min-height: 40%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -2em;
+}
+
+* {
+margin: 0;
+}
+h1{
+	color:#333;
+}
+//Container for login
+#login_container{
+	float: left;
+}
+
+#user_header{
+	
+	width:auto;
+	text-align:right;
+	
+	padding-bottom: 10px;
+	padding-top:10px;
+	padding-right: 10px;
+	background-color:#958E7C;
+	font-size: 22px;
+}
+
+th{
+	padding-right: 20px;
+}
+td{
+
+}

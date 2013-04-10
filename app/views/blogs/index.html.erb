@@ -1,0 +1,39 @@
+<%= link_to "view your blog the way others would see it", user_path(current_user.username)%>
+<br />
+<br />
+<br />
+<br />
+<h1>Listing <%=current_user.username%>'s blog posts</h1>
+
+<table>
+  <tr>
+	
+    <th>Title</th>
+    <th>Body</th>
+    <th>Image</th>
+    <th>Post Date</th>
+    <th>Last Update Date</th>
+    <th></th>
+  </tr>
+
+<% @blogs.each do |blog| %>
+<% if blog.user_id == current_user.id %>
+  <tr>
+	
+	
+    <td><%= blog.title %></td>
+    <td><%= blog.body %></td>
+    <td><%= blog.image %></td>
+	<td><%= blog.Date_Created  %></td>
+	<td><%= blog.Date_Updated  %></td>
+    <td><%= link_to 'Show', blog %></td>
+    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+    <td><%= link_to 'Destroy', blog, confirm: 'Are you sure?', method: :delete %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Blog', new_blog_path %>

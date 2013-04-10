@@ -1,0 +1,16 @@
+<%= form_for @user do |f| %>
+  <div class="field">
+    <%= f.label :user_id %><br /> 
+  </div>
+  <div class="field">
+    <%= f.label :comment%><br />
+    <%= f.text_field :comment %>
+  </div>
+  <div class="field">
+    <%= f.label :profile_picture %><br />
+    <%= f.text_field :profile_picture %> Use a link to the image (Ex: http://dapictures.com/banana.jpg)
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

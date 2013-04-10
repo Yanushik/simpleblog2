@@ -1,0 +1,48 @@
+// Place all the styles related to the Blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#blog_container{
+	table{
+		padding:0px 10px 25px px;
+		border: 2px solid #C4C1B0;
+		border-radius: 0px;
+		width:747px;
+		background-color: #C4C1B0;
+		box-shadow: 0px 0px 0px #222;
+		
+	}
+	td{
+		
+		padding: 0px;
+		width: 50px;
+	}
+	#timestamp{
+		font-size: 8px;;
+	}
+ 
+
+}
+#blog_profile_container{
+	float: left;
+	height: 900px;
+	padding-right: 10px;
+	width: 150px;
+}
+#flash_notice{
+	padding: 10px;
+	color: red;
+}
+#footer{
+ height: 4em;
+ text-align:center;
+ background-color: fff;
+	width:auto;
+	
+	
+	padding-bottom: 10px;
+	padding-top:10px;
+	padding-right: 10px;
+	background-color:#958E7C;
+	font-size: 22px;
+}
