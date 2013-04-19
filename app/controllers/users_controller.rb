@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  
+  
   def new
 	@user = User.new
 	@userprofile = Profile.new
@@ -56,17 +57,28 @@ class UsersController < ApplicationController
 	
 	#@profile = @user.build_profile
 	#@usersprofile = User.find(session[:user_id])
-	respond_to do |format|
-		if @user.update_attributes(params[:user])
-			format.html{ redirect_to blogs_path, notice: 'Profile updated.' }
-			format.json { head :no_content}
-		else
-			format.html { render action: "edit"}
-			format.json { render json: @profile.errors, status: :unprocessable_entity }
-		end
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        format.html{ redirect_to blogs_path, notice: 'Profile updated.' }
+        format.json { head :no_content}
+      else
+      	format.html { render action: "edit"}
+      	format.json { render json: @profile.errors, status: :unprocessable_entity }
+      end
 		
-	end
+    end
   end
   
+  def search
+    if params[:search_text].blank?
+      @search_error = 'Please enter at least one character into the search'
+    elsif params[:search_parameter] == "username"
+     @match_term = "%" + params[:search_text] + "%"
+      @results = User.where("UPPER(username) Like UPPER(?)", @match_term).all
+    elsif params[:search_parameter] == "email"
+      @match_term = "%" + params[:search_text] + "%"
+      @results = User.where("UPPER(email) Like UPPER(?)", @match_term).all
+    end
+  end
 
 end

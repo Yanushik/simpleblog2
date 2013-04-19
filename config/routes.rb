@@ -10,12 +10,14 @@ Proj7C::Application.routes.draw do
  
   get 'users/update_profile'
   get 'users/edit'
+  get 'search', to: 'users#search', as: 'search'
   resources :blogs
   resources :Blogs
   resources :users
   resources :sessions
   root to: 'Main#home'
   
+   
 
   
   # The priority is based upon order of creation:

@@ -4,7 +4,8 @@
   </div>
   <div class="field">
     <%= f.label :comment%><br />
-    <%= f.text_field :comment %>
+    <%= f.text_area :comment, :maxlength => 140%>
+    
   </div>
   <div class="field">
     <%= f.label :profile_picture %><br />

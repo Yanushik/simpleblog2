@@ -1,21 +1,15 @@
 
 
 <div id = "blog_profile_container">
-	<%= image_tag(@usersblog.profile_picture) %>
-	</br>
-	Email: <%= @usersblog.email %>
-	</br>
-	</br>
-	Username: <%= @usersblog.username %>
-	</br>
-	</br>
-	<%= @usersblog.comment %>
+<%= image_tag(@usersblog.profile_picture) %><br>
+Email: <br><%= @usersblog.email %><br>
+Username: <br><%= @usersblog.username %><br>
+TestOfVirtualAttribute:<br><%= @usersblog.username_and_email %><br>
+<%= simple_format(@usersblog.comment)%>
 	</div>
-
-<% @usersblog.blogs.each do |post| %>
 <div id ="blog_container">
 <table>
-
+<% @usersblog.blogs.each do |post| %>
 <tr>
 <td><h2><%= post.title %></h2></td>
 </tr>
@@ -23,13 +17,16 @@
 <td id="timestamp">Posted on: <%= post.Date_Created %></td>
 </tr>
 <tr>
-<td><%= post.body %></td>
+    
+<td><%=post.body %></td>
 </tr>
-
-</table>
-</div>
-<br>
-<br>
-
-
+<tr>
+  <td><hr><td>
+</tr>
 <%end%>
+</table>
+  
+</div>
+
+
+
