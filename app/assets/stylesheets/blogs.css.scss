@@ -12,13 +12,13 @@
 		width:747px;
 		
 		box-shadow: 5px 5px 20px 0px #fff;
-		white-space: pre;
+		
                 color: #00000;
                 
 	}
 	td{
 		
-		padding: 0px;
+		padding-top: 5px;
 		width: 50px;
 	}
         hr{
@@ -37,11 +37,12 @@
 #blog_profile_container{
 	float: left;
         display: box;
-        overflow: hidden;
+        overflow:wrap;
 	height: auto;
 	padding: 5px;
 	width: 170px;
-        white-space: pre;
+        
+        
         background-color:#FFFFFF;
         font-size: 11px;
         padding-right: 100px;
@@ -55,10 +56,12 @@ box-shadow: 5px 5px 20px 0px #fff;
 #footer{
  height: 4em;
  text-align:center;
+margin-top: -180px;
  background-color: fff;
 	width:auto;
-	
-	
+	height: -180px;
+        clear:both;
+	position: relative;
 	padding-bottom: 10px;
 	padding-top:10px;
 	padding-right: 10px;

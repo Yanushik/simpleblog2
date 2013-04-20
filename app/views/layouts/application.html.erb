@@ -32,14 +32,14 @@
    
     
 
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, id: "flash_#{name}" %>
-      <% end %>
+      
 
       <%= yield %>
     </div>
 	
 	
   </body>
- 
+  <div id="footer">
+    &copy; 2013 Yanushik Cerda
+  </div>
 </html>

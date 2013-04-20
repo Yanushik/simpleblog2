@@ -5,6 +5,7 @@
 //General container just to keep the margins centered
 
 #container{
+          
 	padding: 10px 7px 7px 7px;
 	margin: 0 auto;
 	width: 900px;
@@ -12,7 +13,7 @@
 	
 	border: 0px solid #FFFFFF;
 	border-radius:10px;
-	min-height: 40%;
+	min-height: 100%;
 	height: auto !important;
 	height: 100%;
 	margin: 0 auto -2em;
@@ -45,7 +46,4 @@ h1{
 
 th{
 	padding-right: 20px;
-}
-td{
-
 }

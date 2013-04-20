@@ -1,10 +1,10 @@
 
 
 <div id = "blog_profile_container">
-<%= image_tag(@usersblog.profile_picture) %><br>
-Email: <br><%= @usersblog.email %><br>
-Username: <br><%= @usersblog.username %><br>
-TestOfVirtualAttribute:<br><%= @usersblog.username_and_email %><br>
+<%= image_tag(@usersblog.profile_picture) %><br><br>
+Email: <br><%= @usersblog.email %><br><br>
+Username: <br><%= @usersblog.username %><br><br>
+TestOfVirtualAttribute:<br><%= @usersblog.username_and_email %><br><br>
 <%= simple_format(@usersblog.comment)%>
 	</div>
 <div id ="blog_container">
@@ -20,6 +20,7 @@ TestOfVirtualAttribute:<br><%= @usersblog.username_and_email %><br>
     
 <td><%=post.body %></td>
 </tr>
+
 <tr>
   <td><hr><td>
 </tr>
