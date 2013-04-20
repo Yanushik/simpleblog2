@@ -12,12 +12,12 @@ ECHO = $(ECHO1:0=@echo)
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /c/RailsInstaller/Ruby1.9.3/include/ruby-1.9.1
-hdrdir = /c/RailsInstaller/Ruby1.9.3/include/ruby-1.9.1
-arch_hdrdir = c:/RailsInstaller/Ruby1.9.3/include/ruby-1.9.1/$(arch)
+topdir = /C/RailsInstaller/Ruby1.9.3/include/ruby-1.9.1
+hdrdir = /C/RailsInstaller/Ruby1.9.3/include/ruby-1.9.1
+arch_hdrdir = C:/RailsInstaller/Ruby1.9.3/include/ruby-1.9.1/$(arch)
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
 
-DESTDIR = c:
+DESTDIR = C:
 prefix = $(DESTDIR)/RailsInstaller/Ruby1.9.3
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
 exec_prefix = $(prefix)
@@ -89,7 +89,7 @@ RUBY_SO_NAME = msvcrt-ruby191
 arch = i386-mingw32
 sitearch = i386-msvcrt
 ruby_version = 1.9.1
-ruby = c:/RailsInstaller/Ruby1.9.3/bin/ruby
+ruby = C:/RailsInstaller/Ruby1.9.3/bin/ruby
 RUBY = $(ruby)
 RM = rm -f
 RM_RF = $(RUBY) -run -e rm -- -rf
@@ -126,8 +126,8 @@ STATIC_LIB =
 
 BINDIR        = $(bindir)
 RUBYCOMMONDIR = $(sitedir)$(target_prefix)
-RUBYLIBDIR = c:/Users/yanus_000/documents/github/simpleblog2/RedCloth/ruby/1.9.1/gems/json-1.7.7/lib$(target_prefix)
-RUBYARCHDIR = c:/Users/yanus_000/documents/github/simpleblog2/RedCloth/ruby/1.9.1/gems/json-1.7.7/lib$(target_prefix)
+RUBYLIBDIR = C:/Users/yanus_000/Documents/GitHub/simpleblog2/RedCloth/ruby/1.9.1/gems/json-1.7.7/lib$(target_prefix)
+RUBYARCHDIR = C:/Users/yanus_000/Documents/GitHub/simpleblog2/RedCloth/ruby/1.9.1/gems/json-1.7.7/lib$(target_prefix)
 HDRDIR        = $(rubyhdrdir)/ruby$(target_prefix)
 ARCHHDRDIR    = $(rubyhdrdir)/$(arch)/ruby$(target_prefix)
 
