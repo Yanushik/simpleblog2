@@ -37,12 +37,15 @@ class UsersController < ApplicationController
 	respond_to do |format|
 	  if @usersblog.blank?
 		format.html { redirect_to(root_url, :notice => 'User not found')}
+	    
 	  else
-      format.html # show.html.erb
-      format.json { render json: @usersblog }
+		format.html # show.html.erb
+		format.json { render json: @usersblog }
 	  end
     end
   end	
+  
+  
   def edit
 	if session[:user_id]
 	  @user = User.find(session[:user_id])

@@ -44,6 +44,9 @@ class BlogsController < ApplicationController
   # GET /blogs/1/edit
   def edit
     @blog = Blog.find(params[:id])
+	if (@blog.user_id != session[:user_id])	
+		redirect_to(blogs_path, :notice=> "Blog post with this ID either doesn't belong to you or does not exist")
+	end
   end
 
   # POST /blogs
@@ -53,7 +56,7 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to blogs_path, notice: 'Blog was successfully created.' }
+        format.html { redirect_to user_path(current_user.username), notice: 'Post was successfully created.' }
         format.json { render json: @blog, status: :created, location: @blog }
       else
         format.html { render action: "new" }
@@ -69,7 +72,7 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.update_attributes(params[:blog])
-        format.html { redirect_to blogs_path, notice: 'Blog was successfully updated.' }
+        format.html { redirect_to user_path(current_user.username), notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
