@@ -62,7 +62,7 @@ class UsersController < ApplicationController
 	#@usersprofile = User.find(session[:user_id])
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html{ redirect_to blogs_path, notice: 'Profile updated.' }
+        format.html{ redirect_to user_path(current_user.username), notice: 'Profile updated.' }
         format.json { head :no_content}
       else
       	format.html { render action: "edit"}

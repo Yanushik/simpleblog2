@@ -45,7 +45,7 @@ class BlogsController < ApplicationController
   def edit
     @blog = Blog.find(params[:id])
 	if (@blog.user_id != session[:user_id])	
-		redirect_to(blogs_path, :notice=> "Blog post with this ID either doesn't belong to you or does not exist")
+		redirect_to(user_path(current_user.username), :notice=> "Blog post with this ID either doesn't belong to you or does not exist")
 	end
   end
 
