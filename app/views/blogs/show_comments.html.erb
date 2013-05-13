@@ -17,25 +17,25 @@
 <p>
   <%= @blog.body %>
 </p>
+<hr>
+<% if !@blog.comments.empty? %>
 <table>
-  
-    <% if !@blog.comments.empty? %>
-     <% @blog.comments.each do |comment|%>.
+     <% @blog.comments.each do |comment|%>
       <tr >
-       
         <td>
           <p id ="comment">
            <%if User.find(comment.user_id)%>
-          <% @users = User.find(comment.user_id)%>
-          <%= @users.username %> said...
+             <% @users = User.find(comment.user_id)%>
+             <%= @users.username %> said...
+           <%  end %>
           </p>
-        <%end%>
+        
         </td>
-      </TR>
+      </tr>
       <tr>
         <td>
           <p id="commentbody">
-         <%= comment.commentbody%>
+            <%= comment.commentbody%>
           </p>
         </td>
       </tr>
@@ -44,21 +44,28 @@
           <p id="commentdate">
             <%=  comment.created_at%>
           </p>
+          
         </td>
       </tr>
-     <%end %>
-    <% else %>
-      No current comments, be the first  leave a comment!
+      <tr>
+        <td>
+      
+        </td>
       </tr>
-    <% end %>
-  </tr>
+      <%end%>
 </table>
+<%  else %>
+<h2>
+No current comments, be the first  leave a comment!
+</h2>
+<% end %>
 <%= form_tag(comment_add_blog_path()) %>
 <br>
 <p>
 <%= text_area_tag :commentbody %>
 <%= hidden_field_tag :user_id, session[:user_id] %>
 </p>
+
 <p>
 <%= submit_tag 'Submit Comment' %>
 </p>

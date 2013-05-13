@@ -13,18 +13,19 @@ Proj7C::Application.routes.draw do
   
   get 'search', to: 'users#search', as: 'search'
 
-  
-  
+  match 'blogs/show_comments/:id' => 'blogs#show_comments', :as => :show_comments
+ 
   resources :blogs do
     member do
       post :comment_add
       get :show_comments
     end
   end
-  get 'show_comments', to: 'blogs#show_comments', as:'comments'
+  get 'blogs/show_comments', as:'comments'
   resources :users
   resources :sessions
   root to: 'Main#home'
+  
   
    
 

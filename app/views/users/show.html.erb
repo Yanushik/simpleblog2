@@ -1,6 +1,7 @@
 
 
 <div id = "blog_profile_container">
+
 <%= image_tag(@usersblog.profile_picture) %><br><br>
 Email: <br><%= @usersblog.email %><br><br>
 Username: <br><%= @usersblog.username %><br><br>
@@ -17,17 +18,22 @@ TestOfVirtualAttribute:<br><%= @usersblog.username_and_email %><br><br>
 <td id="timestamp">Posted on: <%= post.Date_Created %></td>
 </tr>
 <tr>
-    
+     
 <td><%=simple_format(post.body) %></td>
 <%if @usersblog.id == session[:user_id]%>
 <td style = "width:20px;">
 		<%= link_to "Edit", edit_blog_path(post) %>
 		<%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %>
 </td>
-<% end %>
-
 </tr>
 
+<% end %>
+<tr>
+<p id="commentcount">
+  <% @sample = post.comments.count.to_s %>
+  <td><%=  link_to @sample+ " Comments", show_comments_path(post) %></td>
+</p>
+</tr>
 <tr>
   <td><hr><td>
 </tr>
