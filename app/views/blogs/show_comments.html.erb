@@ -17,6 +17,7 @@
 <p>
   <%= @blog.body %>
 </p>
+<br>
 <hr>
 <% if !@blog.comments.empty? %>
 <table>
@@ -54,7 +55,10 @@
       </tr>
       <%end%>
 </table>
+
 <%  else %>
+<br>
+<br>
 <strong>
 No current comments, be the first  leave a comment!
 </strong>

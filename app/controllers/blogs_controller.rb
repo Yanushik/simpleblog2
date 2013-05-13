@@ -118,7 +118,7 @@ class BlogsController < ApplicationController
     @blog.destroy
 
     respond_to do |format|
-      format.html { redirect_to blogs_url }
+      format.html { redirect_to user_path(current_user.username) }
       format.json { head :no_content }
     end
   end

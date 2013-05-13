@@ -39,6 +39,7 @@ class UsersController < ApplicationController
 		format.html { redirect_to(root_url, :notice => 'User not found')}
 	    
 	  else
+	  
 		format.html # show.html.erb
 		format.json { render json: @usersblog }
 	  end

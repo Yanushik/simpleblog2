@@ -24,12 +24,11 @@
     <%= f.text_field :image %> Not implemented yet, feel free to leave blank!
   </div>
   <div class="field">
-    <%= f.label current_user.id %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
   <div class="field">
 	<% @cd = Date.today.to_s %>
-    <%= f.label @cd%>
+    
     <%= f.hidden_field :Date_Created, :value => @cd %>
   </div>
   <div class="actions">
