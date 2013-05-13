@@ -32,12 +32,14 @@
 	#timestamp{
 		font-size: 9px;;
 	}
-	position: relative;
-	top: -320px;
-	right: -230px;
+	position: absolute;
+	top: 140px;
+	right: -100px;
 }
 #blog_profile_container{
 	position:relative;
+	top: 100px;
+	left:0px;
         display: box;
         overflow:wrap;
 	height: auto;
