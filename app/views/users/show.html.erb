@@ -7,8 +7,13 @@ Email: <br><%= @usersblog.email %><br><br>
 Username: <br><%= @usersblog.username %><br><br>
 TestOfVirtualAttribute:<br><%= @usersblog.username_and_email %><br><br>
 <%= simple_format(@usersblog.comment)%>
-	</div>
+</div>
 <div id ="blog_container">
+<p>
+<%if @usersblog.id == session[:user_id]%>
+	<%= link_to "New Post", new_blog_path %>
+<%end%>
+</p>
 <table>
 <% @usersblog.blogs.each do |post| %>
 <tr>
