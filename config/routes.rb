@@ -7,12 +7,21 @@ Proj7C::Application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'view', to: 'users#show', as:'view'
- 
+ # get 'show_comments', to: 'blogs#show_comments', as:'comments'
   get 'users/update_profile'
   get 'users/edit'
+  
   get 'search', to: 'users#search', as: 'search'
-  resources :blogs
-  resources :Blogs
+
+  
+  
+  resources :blogs do
+    member do
+      post :comment_add
+      get :show_comments
+    end
+  end
+  get 'show_comments', to: 'blogs#show_comments', as:'comments'
   resources :users
   resources :sessions
   root to: 'Main#home'

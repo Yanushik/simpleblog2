@@ -14,7 +14,7 @@
           <%= link_to "Log Out", logout_path %>
 		  
 		  <%= link_to "Edit Profile", users_edit_path %>
-		  <%= link_to "Add/Delete Posts", blogs_path %>
+		  <%= link_to "Blog", user_path(current_user.username) %>
                   <%= link_to "Search", search_path %>
                   <%= link_to "List of Users", users_path %>  
         <% else %>

@@ -5,21 +5,22 @@
 #blog_container{
              
 	table{
-                background-color:rgba(255,255,255,1.0);
+        background-color:rgba(255,255,255,1.0);
 		padding:10px 10px 25px 1px;
-		
 		border-radius: 10px;
 		width:747px;
-		
 		box-shadow: 5px 5px 20px 0px #fff;
-		
-                color: #00000;
-                
+        color: #00000;
+        word-wrap: normal;        
 	}
 	td{
 		
 		padding-top: 5px;
 		width: 50px;
+		max-width: 50px;
+		word-wrap: break-word;
+		
+		
 	}
         hr{
             height: 2px;
@@ -67,4 +68,19 @@ margin-top: -1px;
 	padding-right: 10px;
 	background-color:#958E7C;
 	font-size: 18px;
+}
+#comment{
+   font-size: 10px;
+   font-weight:bold
+   
+}
+#commentbody{
+   font-size: 10px;
+   padding-top:3px;
+   padding-left: 25px;
+
+}
+#commentdate{
+   font-size: 8px;
+   text-align:right;
 }

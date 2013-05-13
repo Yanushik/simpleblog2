@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130323191452) do
+ActiveRecord::Schema.define(:version => 20130511001614) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,20 @@ ActiveRecord::Schema.define(:version => 20130323191452) do
     t.integer  "user_id"
     t.date     "Date_Created"
     t.date     "Date_Updated"
+  end
+
+  create_table "blogs_comments", :id => false, :force => true do |t|
+    t.integer "blog_id",    :null => false
+    t.integer "comment_id", :null => false
+  end
+
+  add_index "blogs_comments", ["blog_id", "comment_id"], :name => "index_blogs_comments_on_blog_id_and_comment_id"
+
+  create_table "comments", :force => true do |t|
+    t.string   "commentbody"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "profiles", :force => true do |t|
@@ -38,6 +52,8 @@ ActiveRecord::Schema.define(:version => 20130323191452) do
     t.string   "password_salt"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
+    t.string   "username"
     t.string   "comment"
     t.string   "profile_picture"
   end

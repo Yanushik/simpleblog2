@@ -37,12 +37,15 @@ class UsersController < ApplicationController
 	respond_to do |format|
 	  if @usersblog.blank?
 		format.html { redirect_to(root_url, :notice => 'User not found')}
+	    
 	  else
-      format.html # show.html.erb
-      format.json { render json: @usersblog }
+		format.html # show.html.erb
+		format.json { render json: @usersblog }
 	  end
     end
   end	
+  
+  
   def edit
 	if session[:user_id]
 	  @user = User.find(session[:user_id])
@@ -59,7 +62,7 @@ class UsersController < ApplicationController
 	#@usersprofile = User.find(session[:user_id])
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html{ redirect_to blogs_path, notice: 'Profile updated.' }
+        format.html{ redirect_to user_path(current_user.username), notice: 'Profile updated.' }
         format.json { head :no_content}
       else
       	format.html { render action: "edit"}
