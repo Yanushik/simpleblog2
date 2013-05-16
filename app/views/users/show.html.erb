@@ -16,7 +16,7 @@ TestOfVirtualAttribute:<br><%= @usersblog.username_and_email %><br><br>
 </p>
 <table>
 <% @usersblog.blogs.sort! {|a,b| rel = a.created_at <=> b.created_at} %>
-<% @usersblog.blogs.each do |post| %>
+<% @usersblog.blogs.reverse.each do |post| %>
 <tr>
 <td><h2><%= post.title %></h2></td>
 </tr>
