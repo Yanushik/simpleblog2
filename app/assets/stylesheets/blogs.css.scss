@@ -40,17 +40,20 @@
 	position:relative;
 	top: 100px;
 	left:0px;
-        display: box;
-        overflow:wrap;
+    display: box;
+    overflow:wrap;
 	height: auto;
 	padding: 5px;
-	width: 170px;
-        
-        
-        background-color:#FFFFFF;
-        font-size: 11px;
-        padding-right: 100px;
-box-shadow: 5px 5px 20px 0px #fff;
+	width: 170px;   
+    background-color:#FFFFFF;
+    font-size: 11px;
+    padding-right: 100px;
+	box-shadow: 5px 5px 20px 0px #fff;
+	
+	iframe{
+		height: 170px;
+		width: 170px;
+	}
         
 }
 #flash_notice{

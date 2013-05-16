@@ -1,12 +1,20 @@
 
 
 <div id = "blog_profile_container">
-
+<%if @usersblog.profile_picture != nil%>
 <%= image_tag(@usersblog.profile_picture) %><br><br>
+<%else%>
+<%= image_tag "defaultpicture.png" %>
+<%end%>
 Email: <br><%= @usersblog.email %><br><br>
 Username: <br><%= @usersblog.username %><br><br>
-TestOfVirtualAttribute:<br><%= @usersblog.username_and_email %><br><br>
-<%= simple_format(@usersblog.comment)%>
+<pre>
+
+<% Sanitize.clean(@usersblog.comment.html_safe, {
+					:elements =>['iframe'],
+					:attributes => {'iframe' => ['src','width','height','frameborder' 'allowfullscreen']}})%>
+<%= @usersblog.comment.html_safe %>
+</pre>
 </div>
 <div id ="blog_container">
 <p>
@@ -25,11 +33,19 @@ TestOfVirtualAttribute:<br><%= @usersblog.username_and_email %><br><br>
 </tr>
 <tr>
      
-<td><%=simple_format(post.body) %></td>
+<td style = "width:1000px;">
+<pre>
+<% Sanitize.clean(post.body, :add_attributes =>{
+					:elements =>['iframe','img'],
+					:attributes => {'iframe' => ['src','width','height','frameborder' 'allowfullscreen'],
+									'img' => ['a','href','width','height','src']}})%>
+<%= post.body.html_safe %>
+
+</pre>
+</td>
 <%if @usersblog.id == session[:user_id]%>
 <td style = "width:20px;">
-		<%= link_to "Edit", edit_blog_path(post) %>
-		<%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %>
+		
 </td>
 </tr>
 
@@ -37,7 +53,8 @@ TestOfVirtualAttribute:<br><%= @usersblog.username_and_email %><br><br>
 <tr>
 <p id="commentcount">
   <% @sample = post.comments.count.to_s %>
-  <td><%=  link_to @sample+ " Comments", show_comments_path(post) %></td>
+  <td><%=  link_to @sample+ " Comments", show_comments_path(post) %></td><td><%= link_to "Edit", edit_blog_path(post) %>
+		<%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
 </p>
 </tr>
 <tr>
