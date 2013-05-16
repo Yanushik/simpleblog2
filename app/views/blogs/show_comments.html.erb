@@ -21,7 +21,7 @@
 <hr>
 <% if !@blog.comments.empty? %>
 <table>
-     <% @blog.comments.each do |comment|%>
+     <% @blog.comments.reverse.each do |comment|%>
       <tr >
         <td>
           <p id ="comment">
