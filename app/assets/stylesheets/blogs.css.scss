@@ -37,20 +37,20 @@
 	right: -100px;
 }
 #blog_profile_container{
-	position:relative;
-	top: 100px;
-	left:0px;
+    position:relative;
+    top: 100px;
+    left:0px;
     display: box;
     overflow:wrap;
-	height: auto;
-	padding: 5px;
-	width: 170px;   
+    height: auto;
+    padding: 5px;
+    width: 170px;   
     background-color:#FFFFFF;
     font-size: 11px;
     padding-right: 100px;
-	box-shadow: 5px 5px 20px 0px #fff;
-	
-	iframe{
+    box-shadow: 5px 5px 20px 0px #fff;
+    white-space:pre-wrap;
+    iframe{
 		height: 170px;
 		width: 170px;
 	}

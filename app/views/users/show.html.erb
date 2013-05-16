@@ -2,19 +2,22 @@
 
 <div id = "blog_profile_container">
 <%if @usersblog.profile_picture != nil%>
-<%= image_tag(@usersblog.profile_picture) %><br><br>
+  <%= image_tag(@usersblog.profile_picture) %><br><br>
 <%else%>
-<%= image_tag "defaultpicture.png" %>
+  <%= image_tag "defaultpicture.png" %>
 <%end%>
 Email: <br><%= @usersblog.email %><br><br>
 Username: <br><%= @usersblog.username %><br><br>
-<pre>
-
+<pre-wrap>
+<% if @usersblog.comment != nil %>
 <% Sanitize.clean(@usersblog.comment.html_safe, {
 					:elements =>['iframe'],
 					:attributes => {'iframe' => ['src','width','height','frameborder' 'allowfullscreen']}})%>
 <%= @usersblog.comment.html_safe %>
-</pre>
+<% else %>
+  When you add a comment it will show up here!
+<%end%>
+</pre-wrap>
 </div>
 <div id ="blog_container">
 <p>
