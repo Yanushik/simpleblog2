@@ -8,7 +8,11 @@ group :development do
 	gem 'sqlite3'
 end
 
+# heroku Addons begin
 gem 'pg'
+gem 'newrelic_rpm'
+##
+
 
 gem 'sanitize'
 
