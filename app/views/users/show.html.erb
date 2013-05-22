@@ -46,20 +46,22 @@ Username: <br><%= @usersblog.username %><br><br>
 
 </pre>
 </td>
-<%if @usersblog.id == session[:user_id]%>
+
 <td style = "width:20px;">
 		
 </td>
 </tr>
-
-<% end %>
 <tr>
 <p id="commentcount">
   <% @sample = post.comments.count.to_s %>
+  <%if @usersblog.id == session[:user_id]%>
   <td><%=  link_to @sample+ " Comments", show_comments_path(post) %></td><td><%= link_to "Edit", edit_blog_path(post) %>
 		<%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+  <%end%>
 </p>
+
 </tr>
+
 <tr>
   <td><hr><td>
 </tr>
