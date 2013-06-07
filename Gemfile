@@ -13,7 +13,7 @@ gem 'pg'
 gem 'newrelic_rpm'
 ##
 
-gem 'therubyracer', :platforms => :ruby
+
 gem 'sanitize'
 
 # Gems used only for assets and not required
