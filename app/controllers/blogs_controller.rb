@@ -81,13 +81,15 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(params[:blog])
-
+	@recaptchaError
     respond_to do |format|
-      if @blog.save
+      if verify_recaptcha() and @blog.save
         format.html { redirect_to user_path(current_user.username), notice: 'Post was successfully created.' }
         format.json { render json: @blog, status: :created, location: @blog }
+		@recaptchaError = ''
       else
-        format.html { render action: "new" }
+		
+        format.html { render action: "new", notice: 'Errror FIND ME EIEIEINE' }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end

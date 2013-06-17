@@ -10,6 +10,7 @@ end
 
 # heroku Addons begin
 gem 'pg'
+gem "recaptcha", :require => "recaptcha/rails"
 ##
 
 
