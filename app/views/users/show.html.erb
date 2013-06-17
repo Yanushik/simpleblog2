@@ -2,7 +2,7 @@
 
 <div id = "blog_profile_container">
 <%if @usersblog.profile_picture != nil%>
-  <%= image_tag(@usersblog.profile_picture) %><br><br>
+  <%= image_tag(@usersblog.profile_picture), :class =>"profile" %><br><br>
 <%else%>
   <%= image_tag "defaultpicture.png" %>
 <%end%>
