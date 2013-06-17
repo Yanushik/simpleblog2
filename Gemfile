@@ -10,7 +10,6 @@ end
 
 # heroku Addons begin
 gem 'pg'
-gem 'newrelic_rpm'
 ##
 
 
