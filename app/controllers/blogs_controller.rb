@@ -88,8 +88,8 @@ class BlogsController < ApplicationController
         format.json { render json: @blog, status: :created, location: @blog }
 		@recaptchaError = ''
       else
-		
-        format.html { render action: "new", notice: 'Errror FIND ME EIEIEINE' }
+		flash[:notice] = 'Your input did not match the ReCaptcha. Please try again.'
+        format.html { render action: "new" }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
