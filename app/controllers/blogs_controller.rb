@@ -43,7 +43,7 @@ class BlogsController < ApplicationController
   end
   #Comments code
   def comment_add
-    unless session[:user_id] == nil
+    unless session[:user_id] == nil and !verify_recaptcha()
       @blog = Blog.find(params[:id])
       @comment = Comment.new;
       @comment.commentbody = (params[:commentbody])
@@ -51,6 +51,8 @@ class BlogsController < ApplicationController
       @blog.comments << @comment
       redirect_to :back
     else
+	  ##not working
+	  flash[:notice] = 'Your input did not match the ReCaptcha. Please try again.'
       redirect_to :back
     end
   end

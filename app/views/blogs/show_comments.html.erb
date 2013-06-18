@@ -69,7 +69,10 @@ No current comments, be the first  leave a comment!
 <%= text_area_tag :commentbody %>
 <%= hidden_field_tag :user_id, session[:user_id] %>
 </p>
-
+  <div class="cap">
+  <%= recaptcha_tags %> <%= @recaptchaErrors %>
+  </div>
+  <div id="notice"><%= notice %></div>
 <p>
 <%= submit_tag 'Submit Comment' %>
 </p>
